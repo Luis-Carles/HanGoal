@@ -15,7 +15,6 @@ def library ():
  while (not sel[2]):
         for x in range(len(sel)-1):
          sel[x+1] = False
-         os.system('cls')
 
         print("\nWelcome to the Library, \n\nChoose an option:"
         +"\n\t0: -Introducing a new word."
@@ -136,7 +135,7 @@ def library ():
                         +"\n\t y/n ?"))
 
 
-                        if (a!='y')or (a!='n'):
+                        if (a!='y')and (a!='n'):
                             print("\nERROR: Non valid String, \n\nmust use a"
                             +"\n\t simple y or n for:"
                             +"\n\t[add the non-Found word option]")

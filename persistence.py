@@ -17,12 +17,15 @@ def getWordKey(f,data):
     i =0
     pos = -1
     cand= "lol"
+    limit = len(lib)
 
-    while (not found):
-        cand = words[i][data]
+    while (not found) and (limit>0):
+        cand = lib[i][data]
         if (cand == f):
             found = True
             pos = i
+        i=i+1
+        limit = limit -1
 
     return pos
 
@@ -38,7 +41,7 @@ def findWord(w,data):
     if(resul==-1):
         return ['','','']
     else:
-        return words[resul]
+        return lib[resul]
     
 def modifyWord(w,h,t,data):
     if(data==0):
