@@ -8,10 +8,11 @@ fileName = 'lib'
 file = fileName + '.npy'
 words = nm.load(file)
 lib = words.tolist()
+#print(lib)
 
 #Methods
 
-def getWordKey(w,data):
+def getWordKey(f,data):
     found = False
     i =0
     pos = -1
@@ -19,7 +20,7 @@ def getWordKey(w,data):
 
     while (not found):
         cand = words[i][data]
-        if (cand == w):
+        if (cand == f):
             found = True
             pos = i
 
@@ -38,8 +39,22 @@ def findWord(w,data):
         return ['','','']
     else:
         return words[resul]
+    
+def modifyWord(w,h,t,data):
+    if(data==0):
+        pos = getWordKey(w,data)
+        lib[pos][1]=h
+        lib[pos][2]=t
+    if(data==1):
+        pos = getWordKey(h,data)
+        lib[pos][0]=w
+        lib[pos][2]=t
+    if(data==2):
+        pos = getWordKey(t,data)
+        lib[pos][0]=w
+        lib[pos][1]=h
 
-
+    nm.save(file,lib)
 
 
 
