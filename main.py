@@ -286,7 +286,7 @@ def library ():
                         +"\n\t y/n ?"))
 
 
-                        if (a!='y')or (a!='n'):
+                        if (a!='y')and (a!='n'):
                             print("\nERROR: Non valid String, \n\nmust use a"
                             +"\n\t simple y or n for:"
                             +"\n\t[add the non-Found word option]")
@@ -411,7 +411,7 @@ def library ():
                                     else:
                                         sel[6] = True   
                         
-                            per.modifyWord(f,h,t)
+                            per.modifyWord(f,h,t,data)
 
                     if(data==1):
                             sel[6]=False
@@ -441,7 +441,7 @@ def library ():
                                     else:
                                         sel[6] = True   
                         
-                            per.modifyWord(w,f,t)
+                            per.modifyWord(w,f,t,data)
 
                     if(data==2):
                             sel[6]=False
@@ -471,7 +471,7 @@ def library ():
                                     else:
                                         sel[6] = True   
                         
-                            per.modifyWord(w,h,f)
+                            per.modifyWord(w,h,f,data)
              
       
 ##Exam
