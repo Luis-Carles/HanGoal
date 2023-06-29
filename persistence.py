@@ -1,5 +1,7 @@
 ###Dependencies
 import numpy as nm
+import random
+import exam as e
 
 
 ##Deprecated: Local option
@@ -8,7 +10,10 @@ fileName = 'lib'
 file = fileName + '.npy'
 words = nm.load(file)
 lib = words.tolist()
-#print(lib)
+
+fileExam = 'exams'+ '.npy'
+questions = nm.load(fileExam)
+exams = questions.tolist()
 
 #Methods
 
@@ -59,8 +64,45 @@ def modifyWord(w,h,t,data):
 
     nm.save(file,lib)
 
+def prepareExam(l):
+    exam = []
+    rep = []
+    limit = l
+    n = 0
+    m = 0
+    i = 0
+    found = False
+
+    results = []
+
+    if limit>len(lib):
+        limit = len(lib)
+    
+    while (limit>0):
+        n = random.randint(0,limit)
+        m = len(rep)
+        found = False
+
+        while (not found) and (m>0):
+
+            if(rep[i]==lib[n]):
+                found =True
+            else:
+                m = m-1
+                i = i+1
+
+        if(not found):
+            exam.append(lib[n])
+            limit = limit -1
+
+    # Saving the exam and the results
+    results = e.main(exam)
+    final = (exam,results)
+    exams.append(final)
+
+    nm.save(fileExam,exams)
 
 
 ## Option 2: redis
 
-##Option 3: Mong
+##Option 3: Mongo

@@ -476,6 +476,58 @@ def library ():
       
 ##Exam
 
+def exam():
+ 
+ while (not sel[2]):
+        limit =0
+        for x in range(len(sel)-1):
+         sel[x+1] = False
+
+        print("\nLets prepare the exam. \n\nChoose an option:"
+        +"\n\t0: -Vocabulary exam."
+        +"\n\t1: -Grammar exam."
+        +"\n\t2: -Revise recent exams."
+        +"\n\t3: -Returning to Initial menu")
+
+        while(not sel[3]):
+            try:
+                opt = int(input("\nChoose one option \n\n"
+                + "\n\tmust be an integer between 0-3\n\n"))
+            except ValueError:
+                print("option must be an integer")
+                exit(-1)
+
+            if (opt<0) or (opt>3):
+                print("\nERROR: wrong option, \n\nmust use a"
+                +"\n\tinteger between 0-3 for:"
+                +"\n\t[ExamMenu option]")
+            else:
+                sel[3] = True
+
+        if (opt == 3):
+            sel[2]= True
+            os.system('cls')
+
+        if (opt == 0):
+            while(not sel[3]):
+                try:
+                    limit = int(input("\nChoose the number of words:\n\n"
+                    + "\n\tmust be an integer\n\n"))
+                except ValueError:
+                    print("option must be an integer")
+                    exit(-1)
+
+                if (limit<1):
+                    print("\nERROR: wrong option, \n\nmust use a"
+                    +"\n\tpositive non-zero integer for:"
+                    +"\n\t[vocabularyExam option]")
+                else:
+                    sel[3] = True
+
+            per.prepareExam(limit) 
+
+        #if (opt == 1):  
+        #if (opt == 2):
 
 ##Loop
 
@@ -509,8 +561,8 @@ def mainMenu ():
             os.system('cls')
             library()
         
-        #if (opt==1):
-        #    exam()
+        if (opt==1):
+            exam()
 
         if (opt==2):
             print("\n Hope u will come back!")
