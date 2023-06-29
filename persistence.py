@@ -6,12 +6,12 @@ import exam as e
 
 ##Deprecated: Local option
 #Variables
-fileName = 'lib'
+fileName = '.\local\lib'
 file = fileName + '.npy'
 words = nm.load(file)
 lib = words.tolist()
 
-fileExam = 'exams'+ '.npy'
+fileExam = '.\local\exams'+ '.npy'
 questions = nm.load(fileExam)
 exams = questions.tolist()
 
@@ -105,4 +105,4 @@ def prepareExam(l):
 
 ## Option 2: redis
 
-##Option 3: Mongo
+## Option 3: Mongo
