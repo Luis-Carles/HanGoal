@@ -509,7 +509,8 @@ def exam():
             os.system('cls')
 
         if (opt == 0):
-            while(not sel[3]):
+            os.system('cls')
+            while(not sel[4]):
                 try:
                     limit = int(input("\nChoose the number of words:\n\n"
                     + "\n\tmust be an integer\n\n"))
@@ -522,7 +523,7 @@ def exam():
                     +"\n\tpositive non-zero integer for:"
                     +"\n\t[vocabularyExam option]")
                 else:
-                    sel[3] = True
+                    sel[4] = True
 
             per.prepareExam(limit) 
 

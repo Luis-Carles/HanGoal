@@ -6,14 +6,17 @@ import exam as e
 
 ##Deprecated: Local option
 #Variables
-fileName = '.\local\lib'
-file = fileName + '.npy'
-words = nm.load(file)
+fileName = '.\local\lib'+ '.npy'
+words = nm.load(fileName)
 lib = words.tolist()
 
 fileExam = '.\local\exams'+ '.npy'
 questions = nm.load(fileExam)
 exams = questions.tolist()
+
+fileResults = '.\local\checks'+ '.npy'
+answers = nm.load(fileResults)
+checks = answers.tolist()
 
 #Methods
 
@@ -37,7 +40,7 @@ def getWordKey(f,data):
 def addNewWord(w,h,t):
 
     lib.append(([w,h,t]))
-    nm.save(file,lib)
+    nm.save(fileName,lib)
 
 def findWord(w,data):
 
@@ -62,7 +65,7 @@ def modifyWord(w,h,t,data):
         lib[pos][0]=w
         lib[pos][1]=h
 
-    nm.save(file,lib)
+    nm.save(fileName,lib)
 
 def prepareExam(l):
     exam = []
@@ -70,7 +73,6 @@ def prepareExam(l):
     limit = l
     n = 0
     m = 0
-    i = 0
     found = False
 
     results = []
@@ -79,12 +81,12 @@ def prepareExam(l):
         limit = len(lib)
     
     while (limit>0):
-        n = random.randint(0,limit)
+        n = random.randint(0,(len(lib)-1))
         m = len(rep)
+        i = 0
         found = False
 
         while (not found) and (m>0):
-
             if(rep[i]==lib[n]):
                 found =True
             else:
@@ -93,14 +95,16 @@ def prepareExam(l):
 
         if(not found):
             exam.append(lib[n])
+            rep.append(lib[n])
             limit = limit -1
 
     # Saving the exam and the results
     results = e.main(exam)
-    final = (exam,results)
-    exams.append(final)
+    checks.append(results)
+    exams.append(exam)
 
     nm.save(fileExam,exams)
+    nm.save(fileResults,checks)
 
 
 ## Option 2: redis
