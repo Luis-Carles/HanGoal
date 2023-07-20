@@ -2,10 +2,12 @@
 import numpy as nm
 import random
 import exam as e
+import backup as b
 
 
 ##Deprecated: Local option
 #Variables
+
 fileName = '.\local\lib'+ '.npy'
 words = nm.load(fileName)
 lib = words.tolist()
@@ -106,6 +108,18 @@ def prepareExam(l):
     nm.save(fileExam,exams)
     nm.save(fileResults,checks)
 
+newones =[[],[]]
+
+def addSeveral():
+    for x in range(len(newones)):
+        lib.append(([newones[x][0],newones[x][1],newones[x][2]]))
+
+    nm.save(fileName,lib)
+
+def retrieveBackup(ver):
+    if(ver == 1):
+        lib = b.backup1
+        nm.save(fileName,lib)
 
 ## Option 2: redis
 
