@@ -3,21 +3,22 @@ import numpy as nm
 import random
 import exam as e
 import backup as b
+from datetime import datetime
 
 
 ##Deprecated: Local option
 #Variables
 
 fileName = '.\local\lib'+ '.npy'
-words = nm.load(fileName)
+words = nm.load(fileName,allow_pickle=True)
 lib = words.tolist()
 
 fileExam = '.\local\exams'+ '.npy'
-questions = nm.load(fileExam)
+questions = nm.load(fileExam,allow_pickle=True)
 exams = questions.tolist()
 
 fileResults = '.\local\checks'+ '.npy'
-answers = nm.load(fileResults)
+answers = nm.load(fileResults,allow_pickle=True)
 checks = answers.tolist()
 
 #Methods
@@ -103,10 +104,15 @@ def prepareExam(l):
     # Saving the exam and the results
     results = e.main(exam)
     checks.append(results)
+    now = str(datetime.now())
+    exam.append(now)
     exams.append(exam)
 
     nm.save(fileExam,exams)
     nm.save(fileResults,checks)
+
+def reviseExam(d):
+    return (exams[d],checks[d])
 
 newones =[[],[]]
 

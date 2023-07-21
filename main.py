@@ -527,8 +527,34 @@ def exam():
 
             per.prepareExam(limit) 
 
-        #if (opt == 1):  
-        #if (opt == 2):
+        #if (opt == 1): 
+ 
+        if (opt == 2):
+            os.system('cls')
+
+            while(not sel[5]):
+                os.system('cls')
+                try:
+                    for x in range(len(per.exams)-1):
+                         print("\n"+str(x)+": "+"Exam taken on "+str(per.exams[x][len(per.exams)-1])+".\n"
+                               "\t")
+                         
+                    d = int(input("\nChoose between all the exams available: \n\n"
+                    + "\n\tmust be an integer between [0 -"+str((len(per.checks)-1))+")\n\n"))
+                except ValueError:
+                    print("option must be an integer")
+                    exit(-1)
+
+                if (d<0) or (d>(len(per.checks)-1)):
+                    print("\nERROR: wrong option, \n\nmust use an"
+                    +"\n\tinteger between 0 and"+str((len(per.checks)-1))+ " stored for:"
+                    +"\n\t[examRevision option]")
+                else:
+                    sel[5] = True
+            
+            rev = per.reviseExam(d)
+            print(rev[0])
+            print(rev[1])
 
 ##Loop
 
@@ -563,6 +589,7 @@ def mainMenu ():
             library()
         
         if (opt==1):
+            os.system('cls')
             exam()
 
         if (opt==2):

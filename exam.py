@@ -43,6 +43,7 @@ def main (e):
                 else:
                     sel = True
 
+            sel = False
             if (response[0] == e[x][1]):
                 if(response[1] == e[x][2]):
                     results.append([e[x][opt],response[0],response[1],int(2)])
@@ -81,6 +82,7 @@ def main (e):
                 else:
                     sel = True
 
+            sel = False
             if (response[0] == e[x][0]):
                 if(response[1] == e[x][2]):
                     results.append([response[0],e[x][opt],response[1],int(2)])
@@ -119,6 +121,7 @@ def main (e):
                 else:
                     sel = True
 
+            sel = False
             if (response[0] == e[x][1]):
                 if(response[1] == e[x][0]):
                     results.append([response[1],response[0],e[x][opt],int(2)])
