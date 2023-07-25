@@ -535,8 +535,8 @@ def exam():
             while(not sel[5]):
                 os.system('cls')
                 try:
-                    for x in range(len(per.exams)-1):
-                         print("\n"+str(x)+": "+"Exam taken on "+str(per.exams[x][len(per.exams)-1])+".\n"
+                    for x in range(len(per.exams)):
+                         print("\n"+str(x)+": "+"Exam taken on "+str(per.exams[x][len(per.exams[x])-1])+".\n"
                                "\t")
                          
                     d = int(input("\nChoose between all the exams available: \n\n"
@@ -553,7 +553,10 @@ def exam():
                     sel[5] = True
             
             rev = per.reviseExam(d)
+            print("\n")
             print(rev[0])
+            print("\n\t")
+            print("\n")
             print(rev[1])
 
 ##Loop
@@ -566,7 +569,7 @@ def mainMenu ():
                 
         print("\n Welcome to HanGoal, \n\nChoose an option:"
         +"\n\t0: -Entering the Library."
-        +"\n\t1: -Starting a new exam."
+        +"\n\t1: -Exam menu."
         +"\n\t2: -Exiting HanGoal.")
 
         while(not sel[1]):

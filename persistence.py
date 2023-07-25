@@ -12,14 +12,17 @@ from datetime import datetime
 fileName = '.\local\lib'+ '.npy'
 words = nm.load(fileName,allow_pickle=True)
 lib = words.tolist()
+#print(lib)
 
 fileExam = '.\local\exams'+ '.npy'
 questions = nm.load(fileExam,allow_pickle=True)
 exams = questions.tolist()
+#print(exams)
 
 fileResults = '.\local\checks'+ '.npy'
 answers = nm.load(fileResults,allow_pickle=True)
 checks = answers.tolist()
+#print(answers)
 
 #Methods
 
