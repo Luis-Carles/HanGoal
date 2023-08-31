@@ -1,0 +1,18 @@
+[build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "HanGoal"
+version = "1.0.1"
+description = "Korean language training tool - HanGoal"
+authors = [ "Luis Carles Dura <lcarles4@hotmail.com>"]
+homepage = "https://github.com/Luis-Carles/HanGoal"
+readme = "README.md"
+
+packages = [
+    { include = "HanGoal" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6, <4.0"
