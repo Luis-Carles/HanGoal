@@ -5,7 +5,7 @@ import os
 ###Showing and resolving the exam
 
 ## First option: console
-def main (e):
+def vExam (e):
     results = []
     response = ['','']
     sel = False
@@ -137,5 +137,8 @@ def main (e):
      +"\n\tYou are able to revise the exam through the examMenu.")
 
     return results
+
+def nExam(e):
+    print("Doing")
                     
 ## Second option: react

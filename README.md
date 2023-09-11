@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Vocabulary: word-word schema
 
-### v1.0.1
+### v1.0.2
 
 /Library:
 - Introduce a new triplet: word + translation + transliteration
@@ -23,5 +23,7 @@ pip install -r requirements.txt
 
 /Exams:
 - Vocabulary exam [#words]
+
+- Numbers exam [#questions]
 
 - Revise any done exams
