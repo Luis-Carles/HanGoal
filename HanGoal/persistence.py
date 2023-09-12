@@ -3,6 +3,7 @@ import numpy as nm
 import random
 import exam as e
 import backup as b
+import calcule as cal
 from datetime import datetime
 
 
@@ -114,166 +115,6 @@ def prepareExam(l):
     nm.save(fileExam,exams)
     nm.save(fileResults,checks)
 
-def calculeDate (y,m,d):
-
-    year = y
-    month = m
-    day = d
-    answer = [['',''],['',''],['','']]
-
-    if (y<2000):
-        answer[0][0] = '천구백'
-        answer[0][1] = 'cheongubaek'
-        year = year - 1900
-
-    if(y>=2000): 
-        answer[0][0] = '이천'
-        answer[0][1] = 'icheon'
-        year = year - 2000 
-
-    if(9 < year < 20):
-        answer[0][0] = answer[0][0] + '십'
-        answer[0][1] = answer[0][1] + 'sib'
-        year = year - 10
-
-    if(19 < year < 30):
-        answer[0][0] = answer[0][0] + '이십'
-        answer[0][1] = answer[0][1] + 'isib'
-        year = year - 20 
-
-    if(29 < year < 40):
-        answer[0][0] = answer[0][0] + '삼십'
-        answer[0][1] = answer[0][1] + 'samsib'
-        year = year - 30 
-
-    if(39 < year < 50):
-        answer[0][0] = answer[0][0] + '사십'
-        answer[0][1] = answer[0][1] + 'sasib'
-        year = year - 40
-
-    if(49 < year < 60):
-        answer[0][0] = answer[0][0] + '오십'
-        answer[0][1] = answer[0][1] + 'osib'
-        year = year - 50
-
-    if(59 < year < 70):
-        answer[0][0] = answer[0][0] + '육십'
-        answer[0][1] = answer[0][1] + 'yuksib'
-        year = year - 60
-
-    if(69 < year < 80):
-        answer[0][0] = answer[0][0] + '칠십'
-        answer[0][1] = answer[0][1] + 'chilsib'
-        year = year - 70
-
-    if(79 < year < 90):
-        answer[0][0] = answer[0][0] + '팔십'
-        answer[0][1] = answer[0][1] + 'palsib'
-        year = year - 80
-
-    if(89 < year < 100):
-        answer[0][0] = answer[0][0] + '구십'
-        answer[0][1] = answer[0][1] + 'gusib'
-        year = year - 90
-
-    if(0 < year < 10):
-        if(year == 1):
-            answer[0][0] = answer[0][0] + '일'
-            answer[0][1] = answer[0][1] + 'il'
-            year = year - 1
-
-        if(year == 2):
-            answer[0][0] = answer[0][0] + '이'
-            answer[0][1] = answer[0][1] + 'i'
-            year = year - 2
-
-        if(year == 3):
-            answer[0][0] = answer[0][0] + '삼'
-            answer[0][1] = answer[0][1] + 'sam'
-            year = year - 3
-
-        if(year == 4):
-            answer[0][0] = answer[0][0] + '사'
-            answer[0][1] = answer[0][1] + 'sa'
-            year = year - 4
-
-        if(year == 5):
-            answer[0][0] = answer[0][0] + '오'
-            answer[0][1] = answer[0][1] + 'o'
-            year = year - 5
-
-        if(year == 6):
-            answer[0][0] = answer[0][0] + '육'
-            answer[0][1] = answer[0][1] + 'yuk'
-            year = year - 6
-
-        if(year == 7):
-            answer[0][0] = answer[0][0] + '칠'
-            answer[0][1] = answer[0][1] + 'chil'
-            year = year - 7
-
-        if(year == 8):
-            answer[0][0] = answer[0][0] + '팔'
-            answer[0][1] = answer[0][1] + 'pal'
-            year = year - 8
-
-        if(year == 9):
-            answer[0][0] = answer[0][0] + '구'
-            answer[0][1] = answer[0][1] + 'gu'
-            year = year - 9
-
-    if(0 < month < 13):
-        if(month == 1):
-            answer[1][0] = answer[1][0] + '일'
-            answer[1][1] = answer[1][1] + 'il'
-
-        if(month == 2):
-            answer[1][0] = answer[1][0] + '이'
-            answer[1][1] = answer[1][1] + 'i'
-
-        if(month == 3):
-            answer[1][0] = answer[1][0] + '삼'
-            answer[1][1] = answer[1][1] + 'sam'
-
-        if(month == 4):
-            answer[1][0] = answer[1][0] + '사'
-            answer[1][1] = answer[1][1] + 'sa'
-
-        if(month == 5):
-            answer[1][0] = answer[1][0] + '오'
-            answer[1][1] = answer[1][1] + 'o'
-
-        if(month == 6):
-            answer[1][0] = answer[1][0] + '유'
-            answer[1][1] = answer[1][1] + 'yu'
-
-        if(month == 7):
-            answer[1][0] = answer[1][0] + '칠'
-            answer[1][1] = answer[1][1] + 'chil'
-
-        if(month == 8):
-            answer[1][0] = answer[1][0] + '팔'
-            answer[1][1] = answer[1][1] + 'pal'
-
-        if(month == 9):
-            answer[1][0] = answer[1][0] + '구'
-            answer[1][1] = answer[1][1] + 'gu'
-
-        if(month == 10):
-            answer[1][0] = answer[1][0] + '시'
-            answer[1][1] = answer[1][1] + 'si'
-
-        if(month == 11):
-            answer[1][0] = answer[1][0] + '십일'
-            answer[1][1] = answer[1][1] + 'sibil'
-
-        if(month == 12):
-            answer[1][0] = answer[1][0] + '십이'
-            answer[1][1] = answer[1][1] + 'sibi'
-
-    return answer
-
-
 def prepareNumbersExam(l):
     exam = []
     limit = l
@@ -282,12 +123,17 @@ def prepareNumbersExam(l):
     dayWeeks = [['monday','월요일','woryoil'],['tuesday','화요일','hwayoil'],['wednesday','수요일','suyoil'],
                 ['thursday','목요일','mogyoil'],['friday','금요일','geumyoil'],['saturday','토요일','toyoil'],
                 ['sunday','일요일','iryoil']]
+    meridium = [['am','오전','ojeon'],['pm','오후','ohu']]
+    units = [['kg','킬로그램','killogeuraem'],['cm','센티미터','sentimiteo'],['room','호','ho']]
+    nounQ = [['years','살','sal'],['people','명','myeong'],['animals','마리','mari'],
+             ['things','개','gae'],['bottles','병','byeong'],['books','권','gwon']]
+    prefixes = [['010','Korea'],['34','Spain']]
 
     if limit>50:
         limit = 50
 
     while (limit>0):
-        n = random.randint(0,4)
+        n = random.randint(0,4) # 4--->5 when phone number is done
 
         if(n == 0):
             y = random.randint(1900,2024)
@@ -295,23 +141,67 @@ def prepareNumbersExam(l):
             d = random.randint(1,31)
             dw = random.randint(1,7)
 
-            answer = calculeDate(y,m,d)
+            answer = cal.calculateDate(y,m,d)
 
             Q[0]= str(y) + '/' + str(m) + '/' + str(d) + ', ' + dayWeeks[dw-1][0]
             Q[1]= answer[0][0] + ' 년 ' + answer[1][0] + '월 ' + answer[2][0] + ' 일, ' + dayWeeks[dw-1][1]
             Q[2]= answer[0][1] + ' 년 ' + answer[1][1] + '월 ' + answer[2][1] + ' 일, ' + dayWeeks[dw-1][2]
         
         if(n == 1):
-            print("Doing")
+            h = random.randint(1,12)
+            min = random.randint(0,59)
+            sec = random.randint(0,59)
+            mr = random.randint(0,1)
+            
+            answer = cal.calculateTime(h,min,sec)
+
+            Q[0]= str(h) + ':' + str(min) + ':' + str(sec) + ' ' + meridium[mr][0]
+            Q[1]= answer[0][0] + ' 시 ' + answer[1][0] + '분 ' + answer[2][0] + ' 초 ' + meridium[mr][1]
+            Q[2]= answer[0][1] + ' 시 ' + answer[1][1] + '분 ' + answer[2][1] + ' 초 ' + meridium[mr][2]
 
         if(n == 2):
-            print("Doing")
+            price = random.randint(1000,100000)
+
+            answer = cal.calculateBig(price)
+
+            Q[0]= str(price) + ' 원'
+            Q[1]= answer[0] + ' 원' 
+            Q[2]= answer[1] + ' 원' 
 
         if(n == 3):
-            print("Doing")
+            unit = random.randint(1,1000)
+            which = 0
+            if(unit>=225):
+                which = 2
+            if(130<unit<225):
+                which = 1
+
+            answer = cal.calculateBig(unit)
+
+            Q[0]= str(unit) + ' ' + units[which][0]
+            Q[1]= answer[0] + ' ' + units[which][1]
+            Q[2]= answer[1] + ' ' + units[which][2]
 
         if(n == 4):
-            print("Doing")
+            quantity = random.randint(1,99)
+            which = random.randint(0,6)
+
+            answer = cal.calculateBig(quantity)
+
+            Q[0]= str(quantity) + ' ' + nounQ[which][0]
+            Q[1]= answer[0] + ' ' + nounQ[which][1]
+            Q[2]= answer[1] + ' ' + nounQ[which][2]
+
+        if(n == 5):
+            prefix = random.randint(0,1)
+            phone1 = random.randint(1,99)
+            phone2 = random.randint(1,99)
+
+            answer = cal.calculatePhone(int(prefixes[prefix][0]),phone1,phone2)
+
+            Q[0]= prefixes[prefix][0] + '-' + str(phone1) + '-' + str(phone2) 
+            Q[1]= answer[0][0] + '-' + answer[1][0] + '-' + answer[2][0] 
+            Q[2]= answer[0][1] + '-' + answer[1][1] + '-' + answer[2][1] 
 
         exam.append(Q)
         limit = limit -1
