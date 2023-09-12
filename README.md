@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Vocabulary: word-word schema
 
-### v1.0.2
+### v1.0.3
 
 /Library:
 - Introduce a new triplet: word + translation + transliteration
@@ -27,3 +27,5 @@ pip install -r requirements.txt
 - Numbers exam [#questions]
 
 - Revise any done exams
+
+- On-Screen Keyboard for Korean inputs.
