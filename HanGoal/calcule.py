@@ -404,187 +404,187 @@ def calculateBig(p):
     if(9999<price<20000):
         answer[0] = answer[0] + '만'
         answer[1] = answer[1] + 'man'
-        price - 10000
+        price = price - 10000
 
     if(19999<price<30000):
         answer[0] = answer[0] + '이만'
         answer[1] = answer[1] + 'iman'
-        price - 20000
+        price = price - 20000
 
     if(29999<price<40000):
         answer[0] = answer[0] + '삼만'
         answer[1] = answer[1] + 'samman'
-        price - 30000
+        price = price - 30000
 
     if(39999<price<50000):
         answer[0] = answer[0] + '사만'
         answer[1] = answer[1] + 'saman'
-        price - 40000
+        price = price - 40000
 
     if(49999<price<60000):
         answer[0] = answer[0] + '오만'
         answer[1] = answer[1] + 'oman'
-        price - 50000
+        price = price - 50000
 
     if(59999<price<70000):
         answer[0] = answer[0] + '육만'
         answer[1] = answer[1] + 'yukman'
-        price - 60000
+        price = price - 60000
 
     if(69999<price<80000):
         answer[0] = answer[0] + '칠만'
         answer[1] = answer[1] + 'chilman'
-        price - 70000  
+        price = price - 70000  
 
     if(79999<price<90000):
         answer[0] = answer[0] + '팔만'
         answer[1] = answer[1] + 'palman'
-        price - 80000
+        price = price - 80000
 
     if(89999<price<100000):
         answer[0] = answer[0] + '구만'
         answer[1] = answer[1] + 'guman'
-        price - 90000
+        price = price - 90000
 
     if(price == 100000):
         answer[0] = answer[0] + '십만'
         answer[1] = answer[1] + 'sibman'
-        price - 100000
+        price = price - 100000
 
     if(999<price<2000):
         answer[0] = answer[0] + '천'
         answer[1] = answer[1] + 'cheon'
-        price - 1000
+        price = price - 1000
 
     if(1999<price<3000):
         answer[0] = answer[0] + '이천'
         answer[1] = answer[1] + 'icheon'
-        price - 2000
+        price = price - 2000
 
     if(2999<price<4000):
         answer[0] = answer[0] + '삼천'
         answer[1] = answer[1] + 'samcheon'
-        price - 3000
+        price = price - 3000
 
     if(3999<price<5000):
         answer[0] = answer[0] + '사천'
         answer[1] = answer[1] + 'sacheon'
-        price - 4000
+        price = price - 4000
 
     if(4999<price<6000):
         answer[0] = answer[0] + '오천'
         answer[1] = answer[1] + 'ocheon'
-        price - 5000
+        price = price - 5000
 
     if(5999<price<7000):
         answer[0] = answer[0] + '육천'
         answer[1] = answer[1] + 'yukcheon'
-        price - 6000
+        price = price - 6000
 
     if(6999<price<8000):
         answer[0] = answer[0] + '칠천'
         answer[1] = answer[1] + 'chilcheon'
-        price - 7000
+        price = price - 7000
 
     if(7999<price<9000):
         answer[0] = answer[0] + '팔천'
         answer[1] = answer[1] + 'palcheon'
-        price - 8000
+        price = price - 8000
 
     if(8999<price<10000):
         answer[0] = answer[0] + '구천'
         answer[1] = answer[1] + 'gucheon'
-        price - 9000
+        price = price - 9000
 
     if(99<price<200):
-        answer[0] = answer[0] + '천'
+        answer[0] = answer[0] + '백'
         answer[1] = answer[1] + 'baek'
-        price - 100
+        price = price - 100
 
     if(199<price<300):
-        answer[0] = answer[0] + '이천'
+        answer[0] = answer[0] + '이백'
         answer[1] = answer[1] + 'ibaek'
-        price - 200
+        price = price - 200
 
     if(299<price<400):
-        answer[0] = answer[0] + '삼천'
+        answer[0] = answer[0] + '삼백'
         answer[1] = answer[1] + 'sambaek'
-        price - 300
+        price = price - 300
 
     if(399<price<500):
-        answer[0] = answer[0] + '사천'
+        answer[0] = answer[0] + '사백'
         answer[1] = answer[1] + 'sabaek'
-        price - 400
+        price = price - 400
 
     if(499<price<600):
-        answer[0] = answer[0] + '오천'
+        answer[0] = answer[0] + '오백'
         answer[1] = answer[1] + 'obaek'
-        price - 500
+        price = price - 500
 
     if(599<price<700):
-        answer[0] = answer[0] + '육천'
+        answer[0] = answer[0] + '육백'
         answer[1] = answer[1] + 'yukbaek'
-        price - 600
+        price = price - 600
 
     if(699<price<800):
-        answer[0] = answer[0] + '칠천'
+        answer[0] = answer[0] + '칠백'
         answer[1] = answer[1] + 'chilbaek'
-        price - 700
+        price = price - 700
 
     if(799<price<900):
-        answer[0] = answer[0] + '팔천'
+        answer[0] = answer[0] + '팔백'
         answer[1] = answer[1] + 'palbaek'
-        price - 800
+        price = price - 800
 
     if(899<price<1000):
-        answer[0] = answer[0] + '구천'
+        answer[0] = answer[0] + '구백'
         answer[1] = answer[1] + 'gubaek'
-        price - 900
+        price = price - 900
 
     if(9<price<20):
         answer[0] = answer[0] + '십'
         answer[1] = answer[1] + 'sib'
-        price - 10
+        price = price - 10
 
     if(19<price<30):
         answer[0] = answer[0] + '이십'
         answer[1] = answer[1] + 'isib'
-        price - 20
+        price = price - 20
 
     if(29<price<40):
         answer[0] = answer[0] + '삼십'
         answer[1] = answer[1] + 'samsib'
-        price - 30
+        price = price - 30
 
     if(39<price<50):
         answer[0] = answer[0] + '사십'
         answer[1] = answer[1] + 'sasib'
-        price - 40
+        price = price - 40
 
     if(49<price<60):
         answer[0] = answer[0] + '오십'
         answer[1] = answer[1] + 'osib'
-        price - 50
+        price = price - 50
 
     if(59<price<70):
         answer[0] = answer[0] + '육십'
         answer[1] = answer[1] + 'yuksib'
-        price - 60
+        price = price - 60
 
     if(69<price<80):
         answer[0] = answer[0] + '칠십'
         answer[1] = answer[1] + 'chilsib'
-        price - 70
+        price = price - 70
 
     if(79<price<90):
         answer[0] = answer[0] + '팔십'
         answer[1] = answer[1] + 'palsib'
-        price - 80
+        price = price - 80
 
     if(89<price<100):
         answer[0] = answer[0] + '구십'
         answer[1] = answer[1] + 'gusib'
-        price - 90
+        price = price - 90
 
     if(price==1):
         answer[0] = answer[0] + '일'
@@ -624,7 +624,7 @@ def calculateBig(p):
 
     return answer
 
-def calculeQuantity(q):
+def calculateQuantity(q):
         
     quantity = q
     answer = ['','']
@@ -632,47 +632,47 @@ def calculeQuantity(q):
     if(9<quantity<20):
         answer[0] = answer[0] + '열'
         answer[1] = answer[1] + 'yeol'
-        quantity - 10
+        quantity = quantity - 10
 
     if(19<quantity<30):
         answer[0] = answer[0] + '스무'
         answer[1] = answer[1] + 'seumu'
-        quantity - 20
+        quantity = quantity - 20
 
     if(29<quantity<40):
         answer[0] = answer[0] + '서른'
         answer[1] = answer[1] + 'seoreun'
-        quantity - 30
+        quantity = quantity - 30
 
     if(39<quantity<50):
         answer[0] = answer[0] + '마흔'
         answer[1] = answer[1] + 'maheun'
-        quantity - 40
+        quantity = quantity - 40
 
     if(49<quantity<60):
         answer[0] = answer[0] + '쉰'
         answer[1] = answer[1] + 'swin'
-        quantity - 50
+        quantity = quantity - 50
 
     if(59<quantity<70):
         answer[0] = answer[0] + '예순'
         answer[1] = answer[1] + 'yesun'
-        quantity - 60
+        quantity = quantity - 60
 
     if(69<quantity<80):
         answer[0] = answer[0] + '이흔'
         answer[1] = answer[1] + 'ilheun'
-        quantity - 70
+        quantity = quantity - 70
 
     if(79<quantity<90):
         answer[0] = answer[0] + '여든'
         answer[1] = answer[1] + 'yeodeun'
-        quantity - 80
+        quantity = quantity - 80
 
     if(89<quantity<100):
         answer[0] = answer[0] + '아흔'
         answer[1] = answer[1] + 'aheun'
-        quantity - 90
+        quantity = quantity - 90
 
     if(quantity==1):
         answer[0] = answer[0] + '한'
@@ -712,13 +712,144 @@ def calculeQuantity(q):
 
     return answer
 
-def calculatePhone(pre,p1,p2):
+def calculateEachPhone(p):
+    phone = p
+    answer = ['','']
 
-    prefix = pre
-    phone1 = p1
-    phone2 = p2
-    answer = [['',''],['',''],['','']]
+    if(99<p<200):
+        answer[0] = answer[0] + '일'
+        answer[1] = answer[1] + 'il'
+        phone = phone - 100
 
-    print("Doing")
+    if(199<p<300):
+        answer[0] = answer[0] + '이'
+        answer[1] = answer[1] + 'i'
+        phone = phone - 200
+
+    if(299<p<400):
+        answer[0] = answer[0] + '삼'
+        answer[1] = answer[1] + 'sam'
+        phone = phone - 300
+
+    if(399<p<500):
+        answer[0] = answer[0] + '사'
+        answer[1] = answer[1] + 'sa'
+        phone = phone - 400
+
+    if(499<p<600):
+        answer[0] = answer[0] + '오'
+        answer[1] = answer[1] + 'o'
+        phone = phone - 500
+
+    if(599<p<700):
+        answer[0] = answer[0] + '육'
+        answer[1] = answer[1] + 'yuk'
+        phone = phone - 600
+
+    if(699<p<800):
+        answer[0] = answer[0] + '칠'
+        answer[1] = answer[1] + 'chil'
+        phone = phone - 700
+
+    if(799<p<900):
+        answer[0] = answer[0] + '팔'
+        answer[1] = answer[1] + 'pal'
+        phone = phone - 800
+
+    if(899<p<1000):
+        answer[0] = answer[0] + '구'
+        answer[1] = answer[1] + 'gu'
+        phone = phone - 900
+
+    if(9<p<20):
+        answer[0] = answer[0] + '일'
+        answer[1] = answer[1] + 'il'
+        phone = phone - 10
+
+    if(19<p<30):
+        answer[0] = answer[0] + '이'
+        answer[1] = answer[1] + 'i'
+        phone = phone - 20
+
+    if(29<p<40):
+        answer[0] = answer[0] + '삼'
+        answer[1] = answer[1] + 'sam'
+        phone = phone - 30
+
+    if(39<p<50):
+        answer[0] = answer[0] + '사'
+        answer[1] = answer[1] + 'sa'
+        phone = phone - 40
+
+    if(49<p<60):
+        answer[0] = answer[0] + '오'
+        answer[1] = answer[1] + 'o'
+        phone = phone - 50
+
+    if(59<p<70):
+        answer[0] = answer[0] + '육'
+        answer[1] = answer[1] + 'yuk'
+        phone = phone - 60
+
+    if(69<p<80):
+        answer[0] = answer[0] + '칠'
+        answer[1] = answer[1] + 'chil'
+        phone = phone - 70
+
+    if(79<p<90):
+        answer[0] = answer[0] + '팔'
+        answer[1] = answer[1] + 'pal'
+        phone = phone - 80
+
+    if(89<p<100):
+        answer[0] = answer[0] + '구'
+        answer[1] = answer[1] + 'gu'
+        phone = phone - 90
+
+    if(p==1):
+        answer[0] = answer[0] + '일'
+        answer[1] = answer[1] + 'il'
+
+    if(p==2):
+        answer[0] = answer[0] + '이'
+        answer[1] = answer[1] + 'i'
+
+    if(p==3):
+        answer[0] = answer[0] + '삼'
+        answer[1] = answer[1] + 'sam'
+
+    if(p==4):
+        answer[0] = answer[0] + '사'
+        answer[1] = answer[1] + 'sa'
+
+    if(p==5):
+        answer[0] = answer[0] + '오'
+        answer[1] = answer[1] + 'o'
+
+    if(p==6):
+        answer[0] = answer[0] + '육'
+        answer[1] = answer[1] + 'yuk'
+
+    if(p==7):
+        answer[0] = answer[0] + '칠'
+        answer[1] = answer[1] + 'chil'
+
+    if(p==8):
+        answer[0] = answer[0] + '팔'
+        answer[1] = answer[1] + 'pal'
+
+    if(p==9):
+        answer[0] = answer[0] + '구'
+        answer[1] = answer[1] + 'gu'
+
+    return answer
+
+def calculatePhone(p1,p2,p3):
+
+    phone = calculateEachPhone(p1)
+    phone2 = calculateEachPhone(p2)
+    phone3 = calculateEachPhone(p3)
+
+    answer = [phone,phone2,phone3]
 
     return answer
