@@ -6,7 +6,7 @@ import persistence as per
 ###Initial Menu
 
 #Variables
-sel = [False,False,False,False,False,False,False]
+sel = [False,False,False,False,False,False,False,False]
 
 ##Library
 
@@ -486,8 +486,9 @@ def exam():
         print("\nLets prepare the exam. \n\nChoose an option:"
         +"\n\t0: -Vocabulary exam."
         +"\n\t1: -Grammar exam."
-        +"\n\t2: -Revise recent exams."
-        +"\n\t3: -Returning to Initial menu")
+        +"\n\t2: -Numbers exam."
+        +"\n\t3: -Revise recent exams."
+        +"\n\t4: -Returning to Initial menu")
 
         while(not sel[3]):
             try:
@@ -497,14 +498,14 @@ def exam():
                 print("option must be an integer")
                 exit(-1)
 
-            if (opt<0) or (opt>3):
+            if (opt<0) or (opt>4):
                 print("\nERROR: wrong option, \n\nmust use a"
                 +"\n\tinteger between 0-3 for:"
                 +"\n\t[ExamMenu option]")
             else:
                 sel[3] = True
 
-        if (opt == 3):
+        if (opt == 4):
             sel[2]= True
             os.system('cls')
 
@@ -528,8 +529,27 @@ def exam():
             per.prepareExam(limit) 
 
         #if (opt == 1): 
- 
+
         if (opt == 2):
+            os.system('cls')
+            while(not sel[7]):
+                try:
+                    limit = int(input("\nChoose the number of questions:\n\n"
+                    + "\n\tmust be an integer\n\n"))
+                except ValueError:
+                    print("option must be an integer")
+                    exit(-1)
+
+                if (limit<1):
+                    print("\nERROR: wrong option, \n\nmust use a"
+                    +"\n\tpositive non-zero integer for:"
+                    +"\n\t[numbersExam option]")
+                else:
+                    sel[7] = True 
+
+            per.prepareNumbersExam(limit)
+ 
+        if (opt == 3):
             os.system('cls')
 
             while(not sel[5]):
