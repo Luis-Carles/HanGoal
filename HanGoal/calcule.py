@@ -699,7 +699,7 @@ def calculateQuantity(q):
         answer[1] = answer[1] + 'yeoseot'
 
     if(quantity==7):
-        answer[0] = answer[0] + '이곱'
+        answer[0] = answer[0] + '일곱'
         answer[1] = answer[1] + 'ilgob'
 
     if(quantity==8):
@@ -713,134 +713,49 @@ def calculateQuantity(q):
     return answer
 
 def calculateEachPhone(p):
-    phone = p
+    phone = str(p)
     answer = ['','']
 
-    if(99<p<200):
-        answer[0] = answer[0] + '일'
-        answer[1] = answer[1] + 'il'
-        phone = phone - 100
+    for x in range(len(phone)):
+        if(phone[x]=='1'):
+            answer[0] = answer[0] + '일'
+            answer[1] = answer[1] + 'il'
 
-    if(199<p<300):
-        answer[0] = answer[0] + '이'
-        answer[1] = answer[1] + 'i'
-        phone = phone - 200
+        if(phone[x]=='2'):
+            answer[0] = answer[0] + '이'
+            answer[1] = answer[1] + 'i'
+    
+        if(phone[x]=='3'):
+            answer[0] = answer[0] + '삼'
+            answer[1] = answer[1] + 'sam'
 
-    if(299<p<400):
-        answer[0] = answer[0] + '삼'
-        answer[1] = answer[1] + 'sam'
-        phone = phone - 300
+        if(phone[x]=='4'):
+            answer[0] = answer[0] + '사'
+            answer[1] = answer[1] + 'sa'
 
-    if(399<p<500):
-        answer[0] = answer[0] + '사'
-        answer[1] = answer[1] + 'sa'
-        phone = phone - 400
+        if(phone[x]=='5'):
+            answer[0] = answer[0] + '오'
+            answer[1] = answer[1] + 'o'
 
-    if(499<p<600):
-        answer[0] = answer[0] + '오'
-        answer[1] = answer[1] + 'o'
-        phone = phone - 500
+        if(phone[x]=='6'):
+            answer[0] = answer[0] + '육'
+            answer[1] = answer[1] + 'yuk'
 
-    if(599<p<700):
-        answer[0] = answer[0] + '육'
-        answer[1] = answer[1] + 'yuk'
-        phone = phone - 600
+        if(phone[x]=='7'):
+            answer[0] = answer[0] + '칠'
+            answer[1] = answer[1] + 'chil'
 
-    if(699<p<800):
-        answer[0] = answer[0] + '칠'
-        answer[1] = answer[1] + 'chil'
-        phone = phone - 700
+        if(phone[x]=='8'):
+            answer[0] = answer[0] + '팔'
+            answer[1] = answer[1] + 'pal'
 
-    if(799<p<900):
-        answer[0] = answer[0] + '팔'
-        answer[1] = answer[1] + 'pal'
-        phone = phone - 800
+        if(phone[x]=='9'):
+            answer[0] = answer[0] + '구'
+            answer[1] = answer[1] + 'gu'
 
-    if(899<p<1000):
-        answer[0] = answer[0] + '구'
-        answer[1] = answer[1] + 'gu'
-        phone = phone - 900
-
-    if(9<p<20):
-        answer[0] = answer[0] + '일'
-        answer[1] = answer[1] + 'il'
-        phone = phone - 10
-
-    if(19<p<30):
-        answer[0] = answer[0] + '이'
-        answer[1] = answer[1] + 'i'
-        phone = phone - 20
-
-    if(29<p<40):
-        answer[0] = answer[0] + '삼'
-        answer[1] = answer[1] + 'sam'
-        phone = phone - 30
-
-    if(39<p<50):
-        answer[0] = answer[0] + '사'
-        answer[1] = answer[1] + 'sa'
-        phone = phone - 40
-
-    if(49<p<60):
-        answer[0] = answer[0] + '오'
-        answer[1] = answer[1] + 'o'
-        phone = phone - 50
-
-    if(59<p<70):
-        answer[0] = answer[0] + '육'
-        answer[1] = answer[1] + 'yuk'
-        phone = phone - 60
-
-    if(69<p<80):
-        answer[0] = answer[0] + '칠'
-        answer[1] = answer[1] + 'chil'
-        phone = phone - 70
-
-    if(79<p<90):
-        answer[0] = answer[0] + '팔'
-        answer[1] = answer[1] + 'pal'
-        phone = phone - 80
-
-    if(89<p<100):
-        answer[0] = answer[0] + '구'
-        answer[1] = answer[1] + 'gu'
-        phone = phone - 90
-
-    if(p==1):
-        answer[0] = answer[0] + '일'
-        answer[1] = answer[1] + 'il'
-
-    if(p==2):
-        answer[0] = answer[0] + '이'
-        answer[1] = answer[1] + 'i'
-
-    if(p==3):
-        answer[0] = answer[0] + '삼'
-        answer[1] = answer[1] + 'sam'
-
-    if(p==4):
-        answer[0] = answer[0] + '사'
-        answer[1] = answer[1] + 'sa'
-
-    if(p==5):
-        answer[0] = answer[0] + '오'
-        answer[1] = answer[1] + 'o'
-
-    if(p==6):
-        answer[0] = answer[0] + '육'
-        answer[1] = answer[1] + 'yuk'
-
-    if(p==7):
-        answer[0] = answer[0] + '칠'
-        answer[1] = answer[1] + 'chil'
-
-    if(p==8):
-        answer[0] = answer[0] + '팔'
-        answer[1] = answer[1] + 'pal'
-
-    if(p==9):
-        answer[0] = answer[0] + '구'
-        answer[1] = answer[1] + 'gu'
+        if(phone[x]=='0'):
+            answer[0] = answer[0] + '공'
+            answer[1] = answer[1] + 'gong'
 
     return answer
 

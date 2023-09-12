@@ -165,7 +165,7 @@ def prepareNumbersExam(l):
 
             answer = cal.calculateBig(price)
 
-            Q[0]= str(price) + ' 원'
+            Q[0]= str(price) + ' won'
             Q[1]= answer[0] + ' 원' 
             Q[2]= answer[1] + ' won' 
 
@@ -185,7 +185,7 @@ def prepareNumbersExam(l):
 
         if(n == 4):
             quantity = random.randint(1,99)
-            which = random.randint(0,6)
+            which = random.randint(0,5)
 
             answer = cal.calculateQuantity(quantity)
 
@@ -211,13 +211,13 @@ def prepareNumbersExam(l):
     # Saving the exam and the results
     results = e.nExam(exam)
 
-    #checks.append(results)
-    #now = str(datetime.now())
-    #exam.append(now)
-    #exams.append(exam)
+    checks.append(results)
+    now = str(datetime.now())
+    exam.append(now)
+    exams.append(exam)
 
-    #nm.save(fileExam,exams)
-    #nm.save(fileResults,checks)
+    nm.save(fileExam,exams)
+    nm.save(fileResults,checks)
 
 def reviseExam(d):
     return (exams[d],checks[d])
