@@ -1,12 +1,13 @@
 #Dependencies
 import os
 from konlpy import *
+import exam as e
 import persistence as per
 
 ###Initial Menu
 
 #Variables
-sel = [False,False,False,False,False,False,False,False]
+sel = [False,False,False,False,False,False,False,False,False]
 
 ##Library
 
@@ -487,8 +488,9 @@ def exam():
         +"\n\t0: -Vocabulary exam."
         +"\n\t1: -Grammar exam."
         +"\n\t2: -Numbers exam."
-        +"\n\t3: -Revise recent exams."
-        +"\n\t4: -Returning to Initial menu")
+        +"\n\t3: -Verbs exam."
+        +"\n\t4: -Revise recent exams."
+        +"\n\t5: -Returning to Initial menu")
 
         while(not sel[3]):
             try:
@@ -505,7 +507,7 @@ def exam():
             else:
                 sel[3] = True
 
-        if (opt == 4):
+        if (opt == 5):
             sel[2]= True
             os.system('cls')
 
@@ -526,7 +528,7 @@ def exam():
                 else:
                     sel[4] = True
 
-            per.prepareExam(limit) 
+            e.prepareExam(limit) 
 
         #if (opt == 1): 
 
@@ -547,9 +549,28 @@ def exam():
                 else:
                     sel[7] = True 
 
-            per.prepareNumbersExam(limit)
- 
+            e.prepareNumbersExam(limit)
+
         if (opt == 3):
+            os.system('cls')
+            while(not sel[8]):
+                try:
+                    limit = int(input("\nChoose the number of questions:\n\n"
+                    + "\n\tmust be an integer\n\n"))
+                except ValueError:
+                    print("option must be an integer")
+                    exit(-1)
+
+                if (limit<1):
+                    print("\nERROR: wrong option, \n\nmust use a"
+                    +"\n\tpositive non-zero integer for:"
+                    +"\n\t[numbersExam option]")
+                else:
+                    sel[8] = True 
+
+            e.prepareVerbsExam(limit)
+
+        if (opt == 4):
             os.system('cls')
 
             while(not sel[5]):
