@@ -12,7 +12,7 @@ lib = words.tolist()
 #print(lib)
 
 fileVerbs = '.\local\dongsa'+ '.npy'
-dongsa = nm.load(fileName,allow_pickle=True)
+dongsa = nm.load(fileVerbs,allow_pickle=True)
 verbs = dongsa.tolist()
 #print(lib)
 

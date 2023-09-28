@@ -20,8 +20,8 @@ def library ():
         print("\nWelcome to the Library, \n\nChoose an option:"
         +"\n\t0: -Introducing a new word."
         +"\n\t1: -Introducing a new verb."
-        +"\n\t2: -Look for a specific word."
-        +"\n\t3: -Modifying a specific word."
+        +"\n\t2: -Look for a specific word/verb in the Library."
+        +"\n\t3: -Modifying a specific word/verb in the Library."
         +"\n\t4: -Returning to Initial menu")
 
         while(not sel[3]):
