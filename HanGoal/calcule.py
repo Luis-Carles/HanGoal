@@ -768,3 +768,11 @@ def calculatePhone(p1,p2,p3):
     answer = [phone,phone2,phone3]
 
     return answer
+
+def calculateVerb(root,manners,tense):
+
+    answer = ['','','']
+
+    print("Doing")
+
+    return answer

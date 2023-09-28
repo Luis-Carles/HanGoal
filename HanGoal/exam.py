@@ -291,10 +291,67 @@ def prepareNumbersExam(l):
 def prepareVerbsExam(l):
     exam = []
     limit = l
+    pf = 0
     n = 0
+    manners = 0
+    v = 0
+
+    if limit>50:
+        limit = 50
+
+    while (limit>0):
+        manners = random.randint(0,1)
+        if(manners == 0):
+            pf = 0
+        if(manners == 1):
+            pf = 1
+    
+        n = random.randint(0,3)
+
+        Q = ['','','']
+        answer = []
+
+        if(n == 0):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n)
+
+            Q[0]= ''
+            Q[1]= answer[0][0] + '   ' + answer[1][0] + '   ' + answer[2][0] + '  ' 
+            Q[2]= answer[0][1] + '  ' + answer[1][1] + '   ' + answer[2][1] + '  ' 
+        
+        if(n == 1):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+
+        if(n == 2):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+
+        if(n == 3):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+
+        exam.append(Q)
+        limit = limit -1
 
     # Saving the exam and the results
-    results = nExam(exam)
+    results = vExam(exam)
     per.saveExam(exam,results)
 
 ## Second option: react
