@@ -11,6 +11,11 @@ words = nm.load(fileName,allow_pickle=True)
 lib = words.tolist()
 #print(lib)
 
+fileVerbs = '.\local\dongsa'+ '.npy'
+dongsa = nm.load(fileName,allow_pickle=True)
+verbs = dongsa.tolist()
+#print(lib)
+
 fileExam = '.\local\exams'+ '.npy'
 questions = nm.load(fileExam,allow_pickle=True)
 exams = questions.tolist()
@@ -72,16 +77,69 @@ def modifyWord(w,h,t,data):
 
     nm.save(fileName,lib)
 
+def getVerbKey(f,data):
+    found = False
+    i =0
+    pos = -1
+    cand= "lol"
+    limit = len(verbs)
+
+    while (not found) and (limit>0):
+        cand = verbs[i][data]
+        if (cand == f):
+            found = True
+            pos = i
+        i=i+1
+        limit = limit -1
+
+    return pos
+
+def addNewVerb(w,h,t):
+
+    verbs.append(([w,h,t]))
+    nm.save(fileVerbs,verbs)
+
+def findVerb(w,data):
+
+    resul = getVerbKey(w,data)
+
+    if(resul==-1):
+        return ['','','']
+    else:
+        return verbs[resul]
+    
+def modifyVerb(w,h,t,data):
+    if(data==0):
+        pos = getVerbKey(w,data)
+        verbs[pos][1]=h
+        verbs[pos][2]=t
+    if(data==1):
+        pos = getVerbKey(h,data)
+        verbs[pos][0]=w
+        verbs[pos][2]=t
+    if(data==2):
+        pos = getVerbKey(t,data)
+        verbs[pos][0]=w
+        verbs[pos][1]=h
+
+    nm.save(fileVerbs,verbs)
+
 def reviseExam(d):
     return (exams[d],checks[d])
 
 newones =[[],[]]
 
-def addSeveral():
+def addSeveralLib():
     for x in range(len(newones)):
         lib.append(([newones[x][0],newones[x][1],newones[x][2]]))
 
     nm.save(fileName,lib)
+
+def addSeveralVerbs():
+    for x in range(len(newones)):
+        verbs.append(([newones[x][0],newones[x][1],newones[x][2]]))
+
+    nm.save(fileVerbs,verbs)
 
 def retrieveBackup(ver):
     if(ver == 1):

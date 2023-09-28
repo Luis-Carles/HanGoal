@@ -17,9 +17,11 @@ pip install -r requirements.txt
 /Library:
 - Introduce a new triplet: word + translation + transliteration
 
-- Find a triplet given one of the three components.
+- Introduce a new verb: word + translation + transliteration
 
-- Modify an existing triplet component by component.
+- Find a triplet/verb given one of the three components.
+
+- Modify an existing triplet/verb component by component.
 
 /Exams:
 - Vocabulary exam [#words]

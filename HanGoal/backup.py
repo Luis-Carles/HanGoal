@@ -76,3 +76,5 @@ backup1 = [['hello','안녕하세요','annyeonghaseyo'],['goodbye','안녕','ann
            ['stand','섭니다','seobnida'],['lie on','눕습니다','nubseubnida'],['swim','수영합니다','suyeonghabnida'],['wait','기다깁니다','gidaribnida'],['learn','배웁니다','baeubnida'],['sing','부릅니다','bureubnida'],
            ['want','싶어요','sipeoyo'],['can','돼요','dwaeyo'],['declarative termination','어요','eoyo'],['past termination','었어요','eosseoyo'],['asking termination','지요','jiyo'],
            ['negative termination','지 않아요','ji anhayo'],['future termiantion','겠어요','gesseoyo'],['desire termination','고 싶어요','go sipeoyo'],['prohibition termination','지 마라요','ji marayo'],['necesity termination','야해요','ya haeyo'],['encouragement termination','시다','sida'],]
+
+backupVerbs = [['','',''],['','',''],['','',''],['','','']]
