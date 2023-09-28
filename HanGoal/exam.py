@@ -227,6 +227,9 @@ def prepareNumbersExam(l):
             sec = random.randint(0,59)
             mr = random.randint(0,1)
             
+            if(sec<10):
+                sec = '0' + sec
+                
             answer = cal.calculateTime(h,min,sec)
 
             Q[0]= str(h) + ':' + str(min) + ':' + str(sec) + ' ' + meridium[mr][0]

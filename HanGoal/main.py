@@ -495,14 +495,14 @@ def exam():
         while(not sel[3]):
             try:
                 opt = int(input("\nChoose one option \n\n"
-                + "\n\tmust be an integer between 0-3\n\n"))
+                + "\n\tmust be an integer between 0-5\n\n"))
             except ValueError:
                 print("option must be an integer")
                 exit(-1)
 
-            if (opt<0) or (opt>4):
+            if (opt<0) or (opt>5):
                 print("\nERROR: wrong option, \n\nmust use a"
-                +"\n\tinteger between 0-3 for:"
+                +"\n\tinteger between 0-5 for:"
                 +"\n\t[ExamMenu option]")
             else:
                 sel[3] = True
