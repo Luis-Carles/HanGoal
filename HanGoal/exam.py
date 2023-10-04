@@ -306,7 +306,8 @@ def prepareVerbsExam(l):
         if(manners == 1):
             pf = 1
     
-        n = random.randint(0,3)
+        n = random.randint(0,6)
+        negation = random.choice([0,0,0,1,2])
 
         Q = ['','','']
         answer = []
@@ -314,7 +315,7 @@ def prepareVerbsExam(l):
         if(n == 0):
             v = random.randint(0,len(per.verbs))
 
-            answer = cal.calculateVerb(per.verbs[v],pf,n)
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
             Q[0]= ''
             Q[1]= answer[0][0] + '   ' + answer[1][0] + '   ' + answer[2][0] + '  ' 
@@ -323,7 +324,7 @@ def prepareVerbsExam(l):
         if(n == 1):
             v = random.randint(0,len(per.verbs))
 
-            answer = cal.calculateVerb(per.verbs[v],pf,n)
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
             Q[0]= ''
             Q[1]= ''
@@ -332,7 +333,7 @@ def prepareVerbsExam(l):
         if(n == 2):
             v = random.randint(0,len(per.verbs))
 
-            answer = cal.calculateVerb(per.verbs[v],pf,n)
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
             Q[0]= ''
             Q[1]= ''
@@ -341,12 +342,14 @@ def prepareVerbsExam(l):
         if(n == 3):
             v = random.randint(0,len(per.verbs))
 
-            answer = cal.calculateVerb(per.verbs[v],pf,n)
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
             Q[0]= ''
             Q[1]= ''
             Q[2]= ''
 
+        # Rest of tenses DOING!!
+        
         exam.append(Q)
         limit = limit -1
 

@@ -769,10 +769,137 @@ def calculatePhone(p1,p2,p3):
 
     return answer
 
-def calculateVerb(root,manners,tense):
+def calculateVerb(root,manners,tense,negation):
+
+    tenses = ['present','past','future','presentPro','pastPro','pastP','cannot']
+    terminations = []
 
     answer = ['','','']
 
-    print("Doing")
+    _verb = root
+    if(manners==0):
+        _formality = 0
+    else:
+        _formality = 1
 
+    # Present
+    if(tenses[tense] == 'present'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant      # Consonant (아,오)   # 하다           # 이다
+            terminations = [[['','eoyo']],   [['','ayo']],      [['','haeyo']], [['','iyeyo'],['','yeyo']]
+                            # Vocal                                         # Vocal (아,오)
+                        [['','yeoyo'],['','yo'],['','woyo'],['','eoyo']],[['','yo'],['','wayo']]]
+        
+        # Doing!!
+
+        # Formal 
+        if(_formality == 1):
+                            # Consonant       # Vocal
+            terminations = [['','seubnida'],['','bnida']]
+
+        # Doing!!
+
+    # Past
+    if(tenses[tense] == 'past'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant         # Consonant (아,오)        # 하다   
+            terminations = [[['','eosseoyo']],    [['','asseoyo']],    [['','haesseoyo']],
+                            # Vocal                                                         # Vocal (아,오)                    # 이다
+                        [['','yeosseoyo'],['','sseoyo'],['','wosseoyo'],['','eosseoyo']],[['','sseoyo'],['','wasseoyo']],[['','ieosseoyo'],['','yeosseoyo']]]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant            # Consonant (아,오)        # Vocal (아,오)
+            terminations = [[['','eossseubnida']], [['','assseubnida']],    [['','ssseubnida'],['','wassseubnida']]
+                            # Vocal
+                            [['','yeossseubnida'],['','ssseubnida'],['','wossseubnida'],['','eossseubnida']]
+                            # 하다                      # 이다
+                            [['','haessseubnida']],[['','ieossseubnida'],['','yeossseubnida']]]          
+
+    # Past Perfect
+    if(tenses[tense] == 'pastP'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant                 # Consonant (아,오)         # 하다   
+            terminations = [[['','eosseosseoyo']],    [['','asseosseoyo']],    [['','haesseosseoyo']],
+                            # Vocal                                                         # Vocal (아,오)                    # 이다
+                        [['','yeosseosseoyo'],['','sseosseoyo'],['','wosseosseoyo'],['','eosseosseoyo']],[['','sseosseoyo'],['','wasseosseoyo']],[['','ieosseosseoyo'],['','yeosseosseoyo']]]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant                 # Consonant (아,오)              # Vocal (아,오)
+            terminations = [[['','eosseossseubnida']], [['','asseossseubnida']],    [['','sseossseubnida'],['','wasseossseubnida']]
+                            # Vocal
+                            [['','yeosseossseubnida'],['','sseossseubnida'],['','wosseossseubnida'],['','eosseossseubnida']]
+                            # 하다                              # 이다
+                            [['','haesseossseubnida']],[['','ieosseossseubnida'],['','yeosseossseubnida']]] 
+
+    # Future
+    if(tenses[tense] == 'future'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant         # Vocal 
+            terminations = [[['','eul geoyeoyo']],   [['','l geoyeoyo']]]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant       # Vocal
+            terminations = [['','eul geoseubnida'],['','l geoseubnida']]
+
+    # Present Progressive
+    if(tenses[tense] == 'presentPro'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant/Vocal 
+            terminations = [['','go isseoyo']]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant/Vocal
+            terminations = [['','go issseubnida']]
+
+    # Past Progressive
+    if(tenses[tense] == 'pastPro'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant/Vocal 
+            terminations = [['','go isseosseoyo']]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant/Vocal
+            terminations = [['','go isseossseubnida']]
+
+    # Cannot
+    if(tenses[tense] == 'cannot'):
+        # Polite
+        if(_formality == 0):
+                            # Consonant/Vocal 
+            terminations = [['','ji mojhaeyo']]
+    
+        # Formal 
+        if(_formality == 1):
+                            # Consonant/Vocal
+            terminations = [['','ji mojhabnida']]
+
+    # 안 negation
+    if(negation==1):
+        answer[0] = 'not ' + answer[0]
+        answer[1] = '안 ' + answer[1]
+        answer[2] = 'an ' + answer[2]
+
+    # 지 negation
+    if(negation==2):
+        root0=root[0]
+        root1=root[1]
+        root2=root[2]
+
+        term = calculateVerb(['do not','않다','anhda'],manners,tense,0)
+
+        answer[0] = root0[:-2] + '' + term[0]
+        answer[1] = root1[:-2] + '' + term[1]
+        answer[2] = root2[:-2] + '' + term[2]
+ 
     return answer
