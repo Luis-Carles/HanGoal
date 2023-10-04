@@ -77,4 +77,11 @@ backup1 = [['hello','안녕하세요','annyeonghaseyo'],['goodbye','안녕','ann
            ['want','싶어요','sipeoyo'],['can','돼요','dwaeyo'],['declarative termination','어요','eoyo'],['past termination','었어요','eosseoyo'],['asking termination','지요','jiyo'],
            ['negative termination','지 않아요','ji anhayo'],['future termiantion','겠어요','gesseoyo'],['desire termination','고 싶어요','go sipeoyo'],['prohibition termination','지 마라요','ji marayo'],['necesity termination','야해요','ya haeyo'],['encouragement termination','시다','sida'],]
 
-backupVerbs = [['','',''],['','',''],['','',''],['','','']]
+#Backup de verbos hasta dia 04/10/2023
+backup2 = [['write','적스다','jeokseuda'],['read','읽스다','ilkseuda'],['talk','말하다','malhada'],['study','공부하다','gongbuhada'],['tell','이야기하다','iyagihada'],['think','생각하다','saenggakhada'],['converse','대화하다','daehwahada'],
+           ['do','하다','hada'],['meet','만나다','mannada'],['watch','보다','boda'],['born','태어나다','taeeonada'],['graduate','졸업하다','joleobhada'],['listen','들다','deulda'],['marry','결혼하다','gyeolhonhada'],['eat','먹다','meokda'],['drink','마시다','masida'],
+           ['buy','사다','sada'],['sell','파다','pada'],['work','일하다','ilhada'],['sleep','자하다','jahada'],['have','있다','issda'],['not have','없다','eobsda'],['greet','인사테리다','insaterida'],['call','천화하다','cheonhwahada'],['be from','사람이다','saramida'],
+           ['go','가다','gada'],['national of','출신이다','chulsinida'],['come','오다','oda'],['ride','타다','tada'],['return','동아가다','dongagada'],['walk','걱다','geokda'],['clean','청소하다','cheongsohada'],['run','달리다','dallida'],['sit','앉다','anjda'],
+           ['stand','서다','seoda'],['lie on','눕다','nubda'],['swim','수영하다','suyeonghada'],['wait','기다리다','gidarida'],['learn','배우다','baeuda'],['sing','부르다','bureuda'],['want','싶다','sipda'],['can','돼다','dwaeda'],['answer','받다','badda'],
+           ['live','살다','salda'],['smoke','피우다','piuda'],['be far','멀다','meolda'],['be close','가까우다','gakkauda'],['being able','몾다','mojda'],['relax','쉬다','swida'],['play','치다','chida'],['look for','찾다','chajda'],['know','알다','arda'],
+           ['not know','모르다','moleuda'],['like','촣아하다','chohahada'],['dislike','싫어하다','silheohada'],['be','이다','ida']]

@@ -14,7 +14,7 @@ lib = words.tolist()
 fileVerbs = '.\local\dongsa'+ '.npy'
 dongsa = nm.load(fileVerbs,allow_pickle=True)
 verbs = dongsa.tolist()
-#print(lib)
+#print(verbs)
 
 fileExam = '.\local\exams'+ '.npy'
 questions = nm.load(fileExam,allow_pickle=True)
@@ -145,6 +145,10 @@ def retrieveBackup(ver):
     if(ver == 1):
         lib = b.backup1
         nm.save(fileName,lib)
+    
+    if(ver == 2):
+        verbs = b.backup2
+        nm.save(fileVerbs,verbs)
 
 def saveExam(exam,results):
     # Saving the exam and the results
