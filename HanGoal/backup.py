@@ -77,11 +77,19 @@ backup1 = [['hello','안녕하세요','annyeonghaseyo'],['goodbye','안녕','ann
            ['want','싶어요','sipeoyo'],['can','돼요','dwaeyo'],['declarative termination','어요','eoyo'],['past termination','었어요','eosseoyo'],['asking termination','지요','jiyo'],
            ['negative termination','지 않아요','ji anhayo'],['future termiantion','겠어요','gesseoyo'],['desire termination','고 싶어요','go sipeoyo'],['prohibition termination','지 마라요','ji marayo'],['necesity termination','야해요','ya haeyo'],['encouragement termination','시다','sida'],]
 
-#Backup de verbos hasta dia 04/10/2023
+#Backup de verbos hasta dia 02/11/2023
 backup2 = [['write','적스다','jeokseuda'],['read','읽스다','ilkseuda'],['talk','말하다','malhada'],['study','공부하다','gongbuhada'],['tell','이야기하다','iyagihada'],['think','생각하다','saenggakhada'],['converse','대화하다','daehwahada'],
            ['do','하다','hada'],['meet','만나다','mannada'],['watch','보다','boda'],['born','태어나다','taeeonada'],['graduate','졸업하다','joleobhada'],['listen','들다','deulda'],['marry','결혼하다','gyeolhonhada'],['eat','먹다','meokda'],['drink','마시다','masida'],
            ['buy','사다','sada'],['sell','파다','pada'],['work','일하다','ilhada'],['sleep','자하다','jahada'],['have','있다','issda'],['not have','없다','eobsda'],['greet','인사테리다','insaterida'],['call','천화하다','cheonhwahada'],['be from','사람이다','saramida'],
            ['go','가다','gada'],['national of','출신이다','chulsinida'],['come','오다','oda'],['ride','타다','tada'],['return','동아가다','dongagada'],['walk','걱다','geokda'],['clean','청소하다','cheongsohada'],['run','달리다','dallida'],['sit','앉다','anjda'],
            ['stand','서다','seoda'],['lie on','눕다','nubda'],['swim','수영하다','suyeonghada'],['wait','기다리다','gidarida'],['learn','배우다','baeuda'],['sing','부르다','bureuda'],['want','싶다','sipda'],['can','돼다','dwaeda'],['answer','받다','badda'],
            ['live','살다','salda'],['smoke','피우다','piuda'],['be far','멀다','meolda'],['be close','가까우다','gakkauda'],['being able','몾다','mojda'],['relax','쉬다','swida'],['play','치다','chida'],['look for','찾다','chajda'],['know','알다','arda'],
-           ['not know','모르다','moleuda'],['like','촣아하다','chohahada'],['dislike','싫어하다','silheohada'],['be','이다','ida']]
+           ['not know','모르다','moleuda'],['like','촣아하다','chohahada'],['dislike','싫어하다','silheohada'],['be','이다','ida'],['die','죽다','jukda'],['use','쓰다','sseuda'],['dance','추다','chuda'],['give','주다','juda'],['turn on','겨다','gyeoda'],['count','세다','seda'],['being small','작다','jakda'],
+           ['being big','크다','keuda'],['being hard','힘들다','himdeulda'],['being better','낫다','nasda'],['wear','입다','ibda'],['put','놓다','nohda'],['being like this','그렿다','geureohda'],['start','시작하다','sijakhada'],
+           ['being mine','제것이다','jegeosida'],['being hurt','아픕다','apeubda'],['being safe','안전다','anjeonda'],['being pretty','예쁘다','yeppeuda'],['being sincere','성실다','seongsilda'],['being cute','귀엽다','guiyeobda'],['being clean','깨끗하다','kkaekkeushada'],
+           ['being dirty','더겁다','deogeobda'],['being thin','날씬하다','nalssinhada'],['being fat','뚱뚱하다','ddungddunghada'],['teach','가르치다','gareuchida'],['get right','맞다','majda'],['being tall','높다','nopda'],['being short','작다','jakda'],
+           ['being busy','바쁘다','babbeuda'],['being cold','춥다','chubda'],['being hot','덥다','deobda'],['be from','출신이다','chulsinida'],['being light','가볍다','gabyeobda'],['being heavy','무접다','mujeobda'],['have much','많다','manhda'],
+           ['being happy','행복하다','haegbokhada'],['being tired','피공하다','pigonghada'],['cook','요리하다','yorihada'],['isanghada','이상하다','being rare'],['juyonghada','주용하다','being quiet'],['ship','부지다','bujida'],['ask','묻다','mudda'],
+           ['present','선물하다','seonmulhada'],['throw','덜지다','deoljida'],['go up','을라가다','eulragada'],['go down','내려가다','naeryeogada'],['arrive','드착하다','deuchakhada'],['thank','고맙다','gomabda'],['attend','다니다','danida'],
+           ['become','되다','dwida'],['laugh','웃','usda'],['cry','울','ulda'],['turn around','뒤다','duida'],['kiga jakda','키가 작다','being short'],['kiga keuda','키가 크다','being tall'],['being brave','용감하다','yonggamhada'],['being lazy','게으르다','geeureuda'],['being easy','쉽스다','suibseuda'],
+           ['being hard','어렵다','eoryeobda'],['being healthy','튼튼하다','teunteunhada'],['being confortable','펀하다','peonhada'],['open','열다','yeolda'],['being nice','촣다','chohda'],['being awfull','싫다','silhda'],['being amazing','대단하다','daedanhada'],['being wrong','들리다','teullida']]

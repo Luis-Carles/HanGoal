@@ -300,7 +300,7 @@ def library ():
                                     + "\n\tmust be in Hangul\n\n"))
 
 
-                                    if (t==''):
+                                    if (h==''):
                                         print("\nERROR: Null String, \n\nmust use a"
                                         +"\n\tnon void String for:"
                                         +"\n\t[new "+ _o +" Hangul]")
@@ -482,7 +482,7 @@ def library ():
                                     + "\n\tmust be in Hangul\n\n"))
 
 
-                                    if (t==''):
+                                    if (h==''):
                                         print("\nERROR: Null String, \n\nmust use a"
                                         +"\n\tnon void String for:"
                                         +"\n\t[new "+ _o +" Hangul]")
@@ -581,7 +581,7 @@ def library ():
                                     + "\n\tmust be in Hangul\n\n"))
 
 
-                                    if (t==''):
+                                    if (h==''):
                                         print("\nERROR: Null String, \n\nmust use a"
                                         +"\n\tnon void String for:"
                                         +"\n\t[new "+ _o +" Hangul]")
