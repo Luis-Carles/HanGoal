@@ -317,9 +317,9 @@ def prepareVerbsExam(l):
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= answer[0][0] + '   ' + answer[1][0] + '   ' + answer[2][0] + '  ' 
-            Q[2]= answer[0][1] + '  ' + answer[1][1] + '   ' + answer[2][1] + '  ' 
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
         
         if(n == 1):
             v = random.randint(0,len(per.verbs))
@@ -348,8 +348,33 @@ def prepareVerbsExam(l):
             Q[1]= ''
             Q[2]= ''
 
-        # Rest of tenses DOING!!
-        
+        if(n == 4):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+
+        if(n == 5):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+
+        if(n == 6):
+            v = random.randint(0,len(per.verbs))
+
+            answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
+
+            Q[0]= ''
+            Q[1]= ''
+            Q[2]= ''
+  
         exam.append(Q)
         limit = limit -1
 

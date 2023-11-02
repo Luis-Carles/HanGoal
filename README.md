@@ -1,5 +1,5 @@
 # HanGoal
-Korean language training and study using KoNLPy and Google Translate API 
+Korean language training and study using KoNLPy, jamotools and Google Translate API 
 
 
 ## Dependencies:
