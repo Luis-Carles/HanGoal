@@ -819,13 +819,13 @@ def calculateVerb(root,manners,tense,negation):
             answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
 
             # Exceptions
-            if(root1[:-1]=='하')or(root1[:-1]=='이'):
+            if(root1[:-1].endswith('하'))or(root1[:-1].endswith('이')):
                 # 하다
-                if(root1[:-1]=='하'):
+                if(root1[:-1].endswith('하')):
                     answer[1] = root1[:-2] + terminations[2][0]
                     answer[2] = root2[:-4] + terminations[2][1]
                 # 이다
-                if(root1[:-1]=='이'):
+                if(root1[:-1].endswith('이')):
                     answer[1] = root1[:-2] + terminations[3][0]
                     answer[2] = root2[:-4] + terminations[3][1]                 
             else:
@@ -906,19 +906,157 @@ def calculateVerb(root,manners,tense,negation):
     if(tenses[tense] == 'past'):
         # Polite
         if(_formality == 0):
-                            # Consonant         # Consonant (아,오)        # 하다   
-            terminations = [[['','eosseoyo']],    [['','asseoyo']],    [['','haesseoyo']],
-                            # Vocal                                                         # Vocal (아,오)                    # 이다
-                        [['','yeosseoyo'],['','sseoyo'],['','wosseoyo'],['','eosseoyo']],[['','sseoyo'],['','wasseoyo']],[['','ieosseoyo'],['','yeosseoyo']]]
-    
+                            # Consonant + V      Consonant + (아,오)                 # 하다                       # 이다
+            terminations = [['었어요','eosseoyo'],    ['았어요','asseoyo'],    ['했어요','haesseoyo'], ['이었어요','ieosseoyo'],['였어요','yeosseoyo'],
+                            # Vocal                                                                                         # Vocal (아,오)
+                        ['ㅕㅆ','어요','yeosseoyo'],['ㅆ','어요','sseoyo'],['ㅝㅆ','어요','wosseoyo'],['ㅓㅆ','어요','eosseoyo'],['ㅆ','어요','sseoyo'],['ㅘㅆ','어요','wasseoyo'],
+                          # 세다
+                        ['어봤어요','eobwasseoyo']]
+
+            answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
+
+            # Exceptions
+            if(root1[:-1].endswith('하'))or(root1[:-1].endswith('이'))or(root1=='세다'):
+                # 하다
+                if(root1[:-1].endswith('하')):
+                    answer[1] = root1[:-2] + terminations[2][0]
+                    answer[2] = root2[:-4] + terminations[2][1]
+                # 이다
+                if(root1[:-1].endswith('이')):
+                    answer[1] = root1[:-2] + terminations[3][0]
+                    answer[2] = root2[:-4] + terminations[3][1]
+                # 세다
+                if(root1=='세다'):
+                    answer[1] = root1[:-1] + terminations[11][0]
+                    answer[2] = root2[:-2] + terminations[11][1]                 
+            else:
+                root_syllables = jt.split_syllables(root1[:-1])
+                # Ends in Consonant
+                if(isVowel(root_syllables[len(root_syllables)-1])==0):
+                    # Find last vowel
+                    step = 1
+                    while(isVowel(root_syllables[len(root_syllables)-step])==0):
+                        step = step + 1
+                    # Consonant + (아,오)
+                    if(isVowel(root_syllables[len(root_syllables)-step])==2):
+                        answer[1] = root1[:-1] + terminations[1][0]
+                        answer[2] = root2[:-2] + terminations[1][1]
+                    else:
+                        # Consonant + V
+                        answer[1] = root1[:-1] + terminations[0][0]
+                        answer[2] = root2[:-2] + terminations[0][1]
+                else:
+                    # Ends in Vowel
+                    # Vocal (아,오)
+                    if(isVowel(root_syllables[len(root_syllables)-1])==2):
+                        if(root_syllables[len(root_syllables)-1]=='ㅏ'):
+                            pool = root_syllables + terminations[9][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[9][1]
+                            answer[2] = root2[:-2] + terminations[9][2]
+                        if(root_syllables[len(root_syllables)-1]=='ㅗ'):
+                            pool = root_syllables[:-1] + terminations[10][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[10][1]
+                            answer[2] = root2[:-3] + terminations[10][2]                                                   
+                    else:
+                        # Vocal
+                        if(root_syllables[len(root_syllables)-1]=='ㅣ'):
+                            pool = root_syllables[:-1] + terminations[5][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[5][1]
+                            answer[2] = root2[:-3] + terminations[5][2]  
+                        if(root_syllables[len(root_syllables)-1]=='ㅓ')or(root_syllables[len(root_syllables)-1]=='ㅕ')or(root_syllables[len(root_syllables)-1]=='ㅐ'):
+                            pool = root_syllables + terminations[6][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[6][1]
+                            answer[2] = root2[:-2] + terminations[6][2]
+                        if(root_syllables[len(root_syllables)-1]=='ㅜ'):
+                            pool = root_syllables[:-1] + terminations[7][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[7][1]
+                            answer[2] = root2[:-3] + terminations[7][2]                      
+                        if(root_syllables[len(root_syllables)-1]=='ㅡ'):
+                            pool = root_syllables[:-1] + terminations[8][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[8][1]
+                            answer[2] = root2[:-4] + terminations[8][2]
+                        if(root_syllables[len(root_syllables)-1]=='ㅔ')or(root_syllables[len(root_syllables)-1]=='ㅟ')or(root_syllables[len(root_syllables)-1]=='ㅚ'):
+                            pool = root_syllables + terminations[6][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[6][1]
+                            answer[2] = root2[:-2] + terminations[6][2]
+
         # Formal 
         if(_formality == 1):
-                            # Consonant            # Consonant (아,오)        # Vocal (아,오)
-            terminations = [[['','eossseubnida']], [['','assseubnida']],    [['','ssseubnida'],['','wassseubnida']],
+                            # Consonant + V                 Consonant + (아,오)        # Vocal (아,오)
+            terminations = [['었습니다','eossseubnida'], ['았습니다','assseubnida'],    ['ㅆ','습니다','ssseubnida'],['ㅘㅆ','습니다','wassseubnida'],
                             # Vocal
-                            [['','yeossseubnida'],['','ssseubnida'],['','wossseubnida'],['','eossseubnida']],
-                            # 하다                      # 이다
-                            [['','haessseubnida']],[['','ieossseubnida'],['','yeossseubnida']]]          
+                            ['ㅕㅆ','습니다','yeossseubnida'],['ㅆ','습니다','ssseubnida'],['ㅝㅆ','습니다','wossseubnida'],['ㅓㅆ','습니다','eossseubnida'],
+                            # 하다                          # 이다
+                            ['했습니다','haessseubnida'],['이었습니다','ieossseubnida'],['였습니다','yeossseubnida'],
+                            # 세다
+                            ['어봤습니다','eobwassseubnida']]
+
+            answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
+
+            # Exceptions
+            if(root1[:-1].endswith('하'))or(root1[:-1].endswith('이'))or(root1=='세다'):
+                # 하다
+                if(root1[:-1].endswith('하')):
+                    answer[1] = root1[:-2] + terminations[8][0]
+                    answer[2] = root2[:-4] + terminations[8][1]
+                # 이다
+                if(root1[:-1].endswith('이')):
+                    answer[1] = root1[:-2] + terminations[9][0]
+                    answer[2] = root2[:-4] + terminations[9][1]
+                # 세다
+                if(root1=='세다'):
+                    answer[1] = root1[:-1] + terminations[11][0]
+                    answer[2] = root2[:-2] + terminations[11][1]                  
+            else:
+                root_syllables = jt.split_syllables(root1[:-1])
+                # Ends in Consonant
+                if(isVowel(root_syllables[len(root_syllables)-1])==0):
+                    # Find last vowel
+                    step = 1
+                    while(isVowel(root_syllables[len(root_syllables)-step])==0):
+                        step = step + 1
+                    # Consonant + (아,오)
+                    if(isVowel(root_syllables[len(root_syllables)-step])==2):
+                        answer[1] = root1[:-1] + terminations[1][0]
+                        answer[2] = root2[:-2] + terminations[1][1]
+                    else:
+                        # Consonant + V
+                        answer[1] = root1[:-1] + terminations[0][0]
+                        answer[2] = root2[:-2] + terminations[0][1]
+                else:
+                    # Ends in Vowel
+                    # Vocal (아,오)
+                    if(isVowel(root_syllables[len(root_syllables)-1])==2):
+                        if(root_syllables[len(root_syllables)-1]=='ㅏ'):
+                            pool = root_syllables + terminations[2][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[2][1]
+                            answer[2] = root2[:-2] + terminations[2][2] 
+                        if(root_syllables[len(root_syllables)-1]=='ㅗ'):
+                            pool = root_syllables[:-1] + terminations[3][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[3][1]
+                            answer[2] = root2[:-3] + terminations[3][2]                                                   
+                    else:
+                        # Vocal
+                        if(root_syllables[len(root_syllables)-1]=='ㅣ'):
+                            pool = root_syllables[:-1] + terminations[4][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[4][1]
+                            answer[2] = root2[:-3] + terminations[4][2]  
+                        if(root_syllables[len(root_syllables)-1]=='ㅓ')or(root_syllables[len(root_syllables)-1]=='ㅕ')or(root_syllables[len(root_syllables)-1]=='ㅐ'):
+                            pool = root_syllables + terminations[5][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[5][1]
+                            answer[2] = root2[:-2] + terminations[5][2]
+                        if(root_syllables[len(root_syllables)-1]=='ㅜ'):
+                            pool = root_syllables[:-1] + terminations[6][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[6][1]
+                            answer[2] = root2[:-3] + terminations[6][2]                      
+                        if(root_syllables[len(root_syllables)-1]=='ㅡ'):
+                            pool = root_syllables[:-1] + terminations[7][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[7][1]
+                            answer[2] = root2[:-4] + terminations[7][2]
+                        if(root_syllables[len(root_syllables)-1]=='ㅔ')or(root_syllables[len(root_syllables)-1]=='ㅟ')or(root_syllables[len(root_syllables)-1]=='ㅚ'):
+                            pool = root_syllables + terminations[2][0]
+                            answer[1] = jt.join_jamos(pool) + terminations[2][1]
+                            answer[2] = root2[:-2] + terminations[2][2]
 
     # Past Perfect
     if(tenses[tense] == 'pastP'):
