@@ -18,8 +18,8 @@ for x in range (len(verbs)):
     print(c.calculateVerb(verbs[x],0,1,0))
     print(c.calculateVerb(verbs[x],1,1,0))
 
-#Past Progressive
-print('\nPAST PROGRESSIVE\n')
+#Past Perfect
+print('\nPAST PERFECT\n')
 for x in range (len(verbs)):
     print(c.calculateVerb(verbs[x],0,2,0))
     print(c.calculateVerb(verbs[x],1,2,0))
