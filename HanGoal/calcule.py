@@ -1221,7 +1221,18 @@ def calculateVerb(root,manners,tense,negation):
                             # Consonant                     # Vocal 
             terminations = [['을 거여요','eul geoyeoyo'],   ['ㄹ','거여요','l geoyeoyo']]
 
-        answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
+            answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
+
+            root_syllables = jt.split_syllables(root1[:-1])
+            # Consonant
+            if(isVowel(root_syllables[len(root_syllables)-1])==0):
+                answer[1] = root1[:-1] + terminations[0][0]
+                answer[2] = root2[:-2] + terminations[0][1]
+            else:
+                # Vocal
+                pool = root_syllables + terminations[1][0]
+                answer[1] = jt.join_jamos(pool) + terminations[1][1]
+                answer[2] = root2[:-2] + terminations[1][2]
 
 
     
@@ -1230,8 +1241,18 @@ def calculateVerb(root,manners,tense,negation):
                             # Consonant       # Vocal
             terminations = [['을 거습니다','eul geoseubnida'],['ㄹ','거습니다','l geoseubnida']]
 
-        
-        #Doing!
+            answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
+
+            root_syllables = jt.split_syllables(root1[:-1])
+            # Consonant
+            if(isVowel(root_syllables[len(root_syllables)-1])==0):
+                answer[1] = root1[:-1] + terminations[0][0]
+                answer[2] = root2[:-2] + terminations[0][1]
+            else:
+                # Vocal
+                pool = root_syllables + terminations[1][0]
+                answer[1] = jt.join_jamos(pool) + terminations[1][1]
+                answer[2] = root2[:-2] + terminations[1][2]
 
     # Present Progressive
     if(tenses[tense] == 'presentPro'):
@@ -1262,12 +1283,12 @@ def calculateVerb(root,manners,tense,negation):
         # Polite
         if(_formality == 0):
                             # Consonant/Vocal 
-            terminations = [['','ji mojhaeyo']]
+            terminations = [['','ji moshaeyo']]
     
         # Formal 
         if(_formality == 1):
                             # Consonant/Vocal
-            terminations = [['','ji mojhabnida']]
+            terminations = [['','ji moshabnida']]
 
     # 안 negation
     if(negation==1):

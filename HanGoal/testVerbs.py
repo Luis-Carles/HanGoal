@@ -27,5 +27,5 @@ for x in range (len(verbs)):
 #Future
 print('\nFUTURE\n')
 for x in range (len(verbs)):
-    print(c.calculateVerb(verbs[x],0,2,0))
-    print(c.calculateVerb(verbs[x],1,2,0))
+    print(c.calculateVerb(verbs[x],0,3,0))
+    print(c.calculateVerb(verbs[x],1,3,0))
