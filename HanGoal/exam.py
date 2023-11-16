@@ -220,7 +220,17 @@ def prepareNumbersExam(l):
 
             answer = cal.calculateDate(y,m,d)
 
-            Q[0]= str(y) + '/' + str(m) + '/' + str(d) + ' ' + dayWeeks[dw-1][0]
+            if(m<10):
+                _m = '0' + str(m)
+            else:
+                _m = str(m)
+
+            if(d<10):
+                _d = '0' + str(d)
+            else:
+                _d = str(d)
+
+            Q[0]= str(y) + '/' + str(_m) + '/' + str(_d) + ' ' + dayWeeks[dw-1][0]
             Q[1]= answer[0][0] + ' 년 ' + answer[1][0] + '월 ' + answer[2][0] + ' 일 ' + dayWeeks[dw-1][1]
             Q[2]= answer[0][1] + ' nyeon ' + answer[1][1] + 'wol ' + answer[2][1] + ' il ' + dayWeeks[dw-1][2]
         
@@ -229,13 +239,20 @@ def prepareNumbersExam(l):
             min = random.randint(0,59)
             sec = random.randint(0,59)
             mr = random.randint(0,1)
-            
-            if(sec<10):
-                sec = '0' + sec
-                
+                  
             answer = cal.calculateTime(h,min,sec)
 
-            Q[0]= str(h) + ':' + str(min) + ':' + str(sec) + ' ' + meridium[mr][0]
+            if(min<10):
+                _min = '0' + str(min)
+            else:
+                _min = str(min)
+
+            if(sec<10):
+                _sec = '0' + str(sec)
+            else:
+                _sec = str(sec)
+
+            Q[0]= str(h) + ':' + str(_min) + ':' + str(_sec) + ' ' + meridium[mr][0]
             Q[1]= answer[0][0] + ' 시 ' + answer[1][0] + '분 ' + answer[2][0] + ' 초 ' + meridium[mr][1]
             Q[2]= answer[0][1] + ' si ' + answer[1][1] + 'bun ' + answer[2][1] + ' cho ' + meridium[mr][2]
 

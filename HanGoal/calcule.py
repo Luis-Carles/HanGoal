@@ -704,7 +704,7 @@ def calculateQuantity(q):
 
     if(quantity==8):
         answer[0] = answer[0] + '여덟'
-        answer[1] = answer[1] + 'yeodeulb'
+        answer[1] = answer[1] + 'yeodeolb'
 
     if(quantity==9):
         answer[0] = answer[0] + '아홉'
