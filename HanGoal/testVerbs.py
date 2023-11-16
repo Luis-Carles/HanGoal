@@ -29,3 +29,33 @@ print('\nFUTURE\n')
 for x in range (len(verbs)):
     print(c.calculateVerb(verbs[x],0,3,0))
     print(c.calculateVerb(verbs[x],1,3,0))
+
+#Present Progressive
+print('\nPRESENT PROGRESSIVE\n')
+for x in range (len(verbs)):
+    print(c.calculateVerb(verbs[x],0,4,0))
+    print(c.calculateVerb(verbs[x],1,4,0))
+
+#Past Progressive
+print('\nPAST PROGRESSIVE\n')
+for x in range (len(verbs)):
+    print(c.calculateVerb(verbs[x],0,5,0))
+    print(c.calculateVerb(verbs[x],1,5,0))
+
+#Cannot
+print('\nCANNOT\n')
+for x in range (len(verbs)):
+    print(c.calculateVerb(verbs[x],0,6,0))
+    print(c.calculateVerb(verbs[x],1,6,0))
+
+#안 negation
+print('\n안 NEGATION\n')
+for x in range (len(verbs)):
+    print(c.calculateVerb(verbs[x],0,0,1))
+    print(c.calculateVerb(verbs[x],1,0,1))
+
+#지 negation
+print('\n지 NEGATION\n')
+for x in range (len(verbs)):
+    print(c.calculateVerb(verbs[x],0,0,2))
+    print(c.calculateVerb(verbs[x],1,0,2))
