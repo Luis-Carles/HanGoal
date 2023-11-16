@@ -1314,8 +1314,8 @@ def calculateVerb(root,manners,tense,negation):
         # Adjectives cant use this tense, response would be empty
         if(root0.startswith('being')):
             answer[0] = root0 + ' | ' + tenses[tense] + ' | ' + _text
-            answer[1] = ''
-            answer[2] = ''
+            answer[1] = ' '
+            answer[2] = ' '
         else:
             # Polite
             if(_formality == 0):

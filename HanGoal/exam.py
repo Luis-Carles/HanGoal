@@ -143,11 +143,14 @@ def exam (e,c):
 
     return results
 
-def vExam(e):
+def lExam(e):
     return exam(e,[0,0,1,2])
 
 def nExam(e):
     return exam(e,[0,0,1,1])
+
+def vExam(e):
+    return exam(e,[0,0,0,0])
 
 ########################
 #PREPARE EXAMS FUNCTIONS
@@ -185,7 +188,7 @@ def prepareExam(l):
             limit = limit -1
 
     # Saving the exam and the results
-    results = vExam(exam)
+    results = lExam(exam)
     per.saveExam(exam,results)
 
 def prepareNumbersExam(l):
@@ -326,54 +329,54 @@ def prepareVerbsExam(l):
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
 
         if(n == 2):
             v = random.randint(0,len(per.verbs))
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
 
         if(n == 3):
             v = random.randint(0,len(per.verbs))
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
 
         if(n == 4):
             v = random.randint(0,len(per.verbs))
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
 
         if(n == 5):
             v = random.randint(0,len(per.verbs))
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
 
         if(n == 6):
             v = random.randint(0,len(per.verbs))
 
             answer = cal.calculateVerb(per.verbs[v],pf,n,negation)
 
-            Q[0]= ''
-            Q[1]= ''
-            Q[2]= ''
+            Q[0]= answer[0]
+            Q[1]= answer[1]
+            Q[2]= answer[2]
   
         exam.append(Q)
         limit = limit -1
